@@ -15,7 +15,7 @@ pipeline {
 
     stage('Deploy to AKS') {
       steps {
-        sh 'kubectl apply -f Deployment.yml'
+        bat 'echo Hello from batch script'
       }
     }
   }
