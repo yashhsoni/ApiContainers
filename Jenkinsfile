@@ -35,6 +35,7 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
+                dir('Terraform'){
                 withCredentials([azureServicePrincipal(credentialsId: AZURE_CREDENTIALS_ID)]) {
                     bat """
                     echo "Navigating to Terraform Directory: %TF_WORKING_DIR%"
@@ -42,6 +43,7 @@ pipeline {
                     echo "Initializing Terraform..."
                     terraform init
                     """
+                }
                 }
             }
         }
