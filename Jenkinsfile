@@ -10,7 +10,7 @@ pipeline {
         RESOURCE_GROUP = 'myResourceGroup'
         AKS_CLUSTER = 'myAKSCluster'
         TF_WORKING_DIR = '.'
-        TERRAFORM PATH = '"C:\\Users\\soniy\\Downloads\\terraform_1.11.3_windows_386\\terraform.exe"'
+        TERRAFORM PATH = '"C:/Users/soniy/Downloads/terraform_1.11.3_windows_386/terraform.exe"'
     }
 
     stages {
