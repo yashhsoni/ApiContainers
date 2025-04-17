@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         ACR_NAME = 'acrrathore01'
-        AZURE_CREDENTIALS_ID = 'jenkins-pipeline-sp'
+        AZURE_CREDENTIALS_ID = 'azure-service-principal'
         ACR_LOGIN_SERVER = "${ACR_NAME}.azurecr.io"
         IMAGE_NAME = 'webapidocker1'
         IMAGE_TAG = 'latest'
