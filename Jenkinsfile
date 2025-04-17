@@ -10,6 +10,7 @@ pipeline {
         RESOURCE_GROUP = 'myResourceGroup'
         AKS_CLUSTER = 'myAKSCluster'
         TF_WORKING_DIR = '.'
+        TERRAFORM PATH = '"C:\\Users\\soniy\\Downloads\\terraform_1.11.3_windows_386\\terraform.exe"'
     }
 
     stages {
@@ -35,7 +36,6 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                dir('terraform'){
                 withCredentials([azureServicePrincipal(credentialsId: AZURE_CREDENTIALS_ID)]) {
                     bat """
                     echo "Navigating to Terraform Directory: %TF_WORKING_DIR%"
@@ -43,7 +43,6 @@ pipeline {
                     echo "Initializing Terraform..."
                     terraform init
                     """
-                }
                 }
             }
         }
